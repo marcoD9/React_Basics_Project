@@ -43,6 +43,7 @@ export const RecipeCard = ({ item, clickFn }) => {
             <Text fontWeight="light">{item.mealType}</Text>
             <Heading size="md">{item.label}</Heading>
             <Text m={4}>Total Cooking Time: {item.totalTime} Minutes</Text>
+            <Text m={4}>Servings: {item.yield}</Text>
             <Text m={4}> Ingredients:</Text>
             {item.ingredientLines.map((line) => (
               <Text mx={8} key={line}>
