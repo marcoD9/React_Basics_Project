@@ -48,21 +48,28 @@ export const RecipesList = ({ item, clickFn }) => {
               </Tag>
             ))}
           </Flex>
-          <Flex gap={4}>
-            {item.dietLabels.map((dietLabel) => (
-              <Tag key={dietLabel} bg="#38A169">
-                {dietLabel}
-              </Tag>
-            ))}
-          </Flex>
-          <Flex gap={4}>
-            {" "}
-            {item.cautions.slice(0, 2).map((caution) => (
-              <Tag bgColor="#E53E3E" key={caution}>
-                {caution}
-              </Tag>
-            ))}
-          </Flex>
+          {item.dietLabels.length > 0 && (
+            <>
+              <Flex gap={4}>
+                {item.dietLabels.map((dietLabel) => (
+                  <Tag key={dietLabel} bg="#38A169">
+                    {dietLabel}
+                  </Tag>
+                ))}{" "}
+              </Flex>
+            </>
+          )}{" "}
+          {item.cautions.length > 0 && (
+            <>
+              <Flex gap={4}>
+                {item.cautions.map((caution) => (
+                  <Tag bgColor="#E53E3E" key={caution}>
+                    {caution}
+                  </Tag>
+                ))}
+              </Flex>
+            </>
+          )}
         </Stack>
       </CardBody>
     </Card>
