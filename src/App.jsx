@@ -1,6 +1,6 @@
-import { RecipeListPage } from "./pages/RecipeListPage";
 import { useState } from "react";
 import { RecipeCard } from "./pages/RecipeCard";
+import { RecipesSearch } from "./components/RecipesSearch";
 
 export const App = () => {
   const [selectedRecipe, setSelectedRecipe] = useState();
@@ -10,7 +10,9 @@ export const App = () => {
       {selectedRecipe ? (
         <RecipeCard item={selectedRecipe} clickFn={setSelectedRecipe} />
       ) : (
-        <RecipeListPage clickFn={setSelectedRecipe} />
+        <>
+          <RecipesSearch clickFn={setSelectedRecipe} />
+        </>
       )}
     </div>
   );
