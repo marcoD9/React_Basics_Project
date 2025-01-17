@@ -19,6 +19,8 @@ export const RecipeCard = ({ item, clickFn }) => {
       borderRadius="xl"
       bgGradient="linear(to-l,  #63b3ed,#bee3f8)"
       maxH="100%"
+      minHeight="100vh" // To cover the vh
+      width="100vw" // To cover the vw
     >
       <Center my={2} h="30vh">
         {" "}
